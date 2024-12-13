@@ -1,0 +1,43 @@
+What is Proxy? 
+
+A proxy is like a middleman between your device and the internet. When you use a proxy, your internet requests go through it first, hiding your real identity (like your IP address) and sometimes adding extra privacy or security.
+
+Here’s the difference between HTTP Proxy, SOCKS4, and SOCKS5 in simple terms:
+
+HTTP Proxy:
+
+Works only for HTTP/HTTPS traffic (web browsing).
+Good for tasks like web scraping or accessing blocked websites.
+It doesn’t support all types of data, only web-related protocols.
+
+SOCKS4 Proxy:
+
+Supports non-HTTP traffic (e.g., FTP, email, torrents).
+Basic, doesn’t have authentication or encryption.
+
+SOCKS5 Proxy:
+
+Advanced version of SOCKS4.
+Supports more protocols and types of traffic.
+Offers authentication (username/password) and better handling of UDP traffic, useful for gaming, video streaming, or VoIP.
+In short, SOCKS5 is more versatile and secure, while HTTP proxies are specific to web traffic.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+https://medium.com/@ThibeauM/difference-between-http-socks4-and-socks5-proxies-85aca2a9e4ae
