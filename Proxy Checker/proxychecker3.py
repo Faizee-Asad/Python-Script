@@ -1,16 +1,13 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-import urllib.request  # Updated for Python 3
-import threading  # Threading lib
-import socket  # Socket lib
-import sys  # System lib
-import time  # Time lib
-import os  # OS lib
+import urllib.request
+import threading
+import socket
+import sys
+import time
+import os
 
-# Disable .pyc file creation
 sys.dont_write_bytecode = True
 
-# Colors (simplified for Python 3; placeholders for future enhancements)
 red = "[ERROR]"
 green = "[SUCCESS]"
 yellow = "[WARNING]"
@@ -52,7 +49,7 @@ def isSocks(host, port, soc):
         alert(f"Connection refused during SOCKS check: {proxy}")
         return False
 
-def socks4(host, port, soc):  # Check if a proxy is SOCKS4 and alive
+def socks4(host, port, soc):
     ipaddr = socket.inet_aton(host)
     packet4 = b"\x04\x01" + port.to_bytes(2, "big") + ipaddr + b"\x00"
     soc.sendall(packet4)
@@ -63,7 +60,7 @@ def socks4(host, port, soc):  # Check if a proxy is SOCKS4 and alive
         return False
     return True
 
-def socks5(host, port, soc):  # Check if a proxy is SOCKS5 and alive
+def socks5(host, port, soc):
     soc.sendall(b"\x05\x01\x00")
     data = soc.recv(2)
     if len(data) < 2:
@@ -72,7 +69,7 @@ def socks5(host, port, soc):  # Check if a proxy is SOCKS5 and alive
         return False
     return True
 
-def isAlive(pip, timeout):  # Check if a proxy is alive
+def isAlive(pip, timeout):
     try:
         proxy_handler = urllib.request.ProxyHandler({'http': pip})
         opener = urllib.request.build_opener(proxy_handler)
